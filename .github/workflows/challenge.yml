@@ -44,7 +44,8 @@ jobs:
           npm run build
 
       - name: Test
-        env:          DEPLOY_TOKEN: ${{ steps.fetch-token.outputs.deploy_token }}
+        env:          
+          DEPLOY_TOKEN: ${{ steps.fetch-token.outputs.deploy_token }}
         run: |
           echo "Running tests for PR: ${{ github.event.pull_request.title }}"
           npm run test
